@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grande | Demo</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="css/plugins/ladda/ladda-themeless.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                                    <span class="block m-t-xs">
+                                        <strong class="font-bold">David Williams</strong>
+                                    </span>
+                                    <span class="text-muted text-xs block">Art Director<b class="caret"></b></span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            IN+
+                        </div>
+                    </li>
+                    <li>
+                        <a href="index.html"><i class="fa fa-exclamation-circle"></i> <span class="nav-label">Khai báo lỗi</span></a>
+                    </li>
+                    <li class="active">
+                        <a href="tasklist.html"><i class="fa fa-tasks"></i> <span class="nav-label">Danh sách công việc</span> </a>
+                    </li>
+                    <li>
+                        <a href="errordetail.html"><i class="fa fa-info-circle"></i> <span class="nav-label">Chi tiết lỗi</span> </a>
+                    </li>
+                    <li>
+                        <a href="taskconfirm.html"><i class="fa fa-calendar-check-o"></i> <span class="nav-label">Xác nhận lỗi</span> </a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-sign-out"></i> Log out
+                            </a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <form method="post">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="wrapper wrapper-content animated fadeInUp">
+                                <div class="ibox">
+                                    <div class="ibox-title">
+                                        <h5>Danh sách công việc được chỉ định</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="row m-b-sm m-t-sm">
+
+                                            <div class="col-md-6">
+                                                <select class="form-control m-b" name="account">
+                                                    <option value="giamsat">Giám sát</option>
+                                                    <option value="giamsat">Giám sát</option>
+                                                    <option value="giamsat">Giám sát</option>
+                                                    <option value="giamsat">Giám sát</option>
+                                                    <option value="giamsat">Giám sát</option>
+                                                    <option value="giamsat">Giám sát</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <button type="button" class="btn btn-primary" id="btn_filter"> Lọc</button> </span></div>
+                                            </div>
+                                            <div class="project-list">
+                                                <table class="table table-hover">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="project-status">
+                                                                <span class="label label-primary">Active</span>
+                                                            </td>
+                                                            <td class="project-title">
+                                                                <a href="project_detail.html">Contract with Zender Company</a>
+                                                                <br/>
+                                                                <small>Created 14.08.2014</small>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with: 48%</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 48%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="project-people">
+                                                                <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                                                <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+                                                                <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
+                                                                <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+                                                                <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+                                                            </td>
+                                                            <td class="project-actions">
+                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="pull-right">
+                                <button class="btn btn-danger" type="submit">Hủy</button>
+                                <button class="ladda-button btn btn-primary"  data-style="expand-left" type="submit">Tạo lỗi</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="footer">
+                    <div>
+                        <strong>Copyright</strong> Grande Company &copy; 2014-2017
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mainly scripts -->
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+        <!-- Custom and plugin javascript -->
+        <script src="js/inspinia.js"></script>
+        <script src="js/plugins/pace/pace.min.js"></script>
+
+        <!-- Ladda -->
+        <script src="js/plugins/ladda/spin.min.js"></script>
+        <script src="js/plugins/ladda/ladda.min.js"></script>
+        <script src="js/plugins/ladda/ladda.jquery.min.js"></script>
+
+        <script>
+
+        $(document).ready(function (){
+
+            $.fn.serializeObject = function () {
+                var o = {};
+                var a = this.serializeArray();
+                $.each(a, function () {
+                    if (o[this.name] !== undefined) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+                return o;
+            };
+
+            function doRequest() {
+                var str = $("form").serializeObject();
+                console.log(JSON.stringify(str));
+            }
+
+            var l = $( '.ladda-button' ).ladda();
+            l.click(function(){
+                // Start loading
+                l.ladda( 'start' );
+                doRequest();
+                // Timeout example
+                // Do something in backend and then stop ladda
+                setTimeout(function(){
+                    l.ladda('stop');
+                },2000)
+            });
+        });
+
+        </script>
+
+    </body>
+
+    </html>
