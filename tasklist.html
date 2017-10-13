@@ -43,16 +43,16 @@
                         </div>
                     </li>
                     <li>
-                        <a href="index.html"><i class="fa fa-exclamation-circle"></i> <span class="nav-label">Khai báo lỗi</span></a>
+                        <a href="/"><i class="fa fa-exclamation-circle"></i> <span class="nav-label">Khai báo lỗi</span></a>
                     </li>
                     <li class="active">
-                        <a href="tasklist.html"><i class="fa fa-tasks"></i> <span class="nav-label">Danh sách công việc</span> </a>
+                        <a href="/tasklist"><i class="fa fa-tasks"></i> <span class="nav-label">Danh sách lỗi</span> </a>
                     </li>
                     <li>
-                        <a href="errordetail.html"><i class="fa fa-info-circle"></i> <span class="nav-label">Chi tiết lỗi</span> </a>
+                        <a href="/errordetail"><i class="fa fa-info-circle"></i> <span class="nav-label">Chi tiết lỗi</span> </a>
                     </li>
                     <li>
-                        <a href="taskconfirm.html"><i class="fa fa-calendar-check-o"></i> <span class="nav-label">Xác nhận lỗi</span> </a>
+                        <a href="/taskconfirm"><i class="fa fa-calendar-check-o"></i> <span class="nav-label">Xác nhận lỗi</span> </a>
                     </li>
                 </ul>
 
@@ -82,134 +82,149 @@
                             <div class="wrapper wrapper-content animated fadeInUp">
                                 <div class="ibox">
                                     <div class="ibox-title">
-                                        <h5>Danh sách công việc được chỉ định</h5>
+                                        <h5>Danh sách lỗi</h5>
                                     </div>
                                     <div class="ibox-content">
-                                        <div class="row m-b-sm m-t-sm">
-
-                                            <div class="col-md-6">
-                                                <select class="form-control m-b" name="account">
-                                                    <option value="giamsat">Giám sát</option>
-                                                    <option value="giamsat">Giám sát</option>
-                                                    <option value="giamsat">Giám sát</option>
-                                                    <option value="giamsat">Giám sát</option>
-                                                    <option value="giamsat">Giám sát</option>
-                                                    <option value="giamsat">Giám sát</option>
-                                                </select>
+                                        <div class="m-b-lg">
+                                            <div class="input-group">
+                                                <input type="text" placeholder="Search issue by name..." class=" form-control">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-white">Tìm kiếm</button>
+                                                </span>
                                             </div>
-                                            <div class="col-md-1">
-                                                <button type="button" class="btn btn-primary" id="btn_filter"> Lọc</button> </span></div>
+                                            <div class="m-t-md">
+                                                <strong>Found 61 issues.</strong>
                                             </div>
-                                            <div class="project-list">
-                                                <table class="table table-hover">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="project-status">
-                                                                <span class="label label-primary">Active</span>
-                                                            </td>
-                                                            <td class="project-title">
-                                                                <a href="project_detail.html">Contract with Zender Company</a>
-                                                                <br/>
-                                                                <small>Created 14.08.2014</small>
-                                                            </td>
-                                                            <td class="project-completion">
-                                                                <small>Completion with: 48%</small>
-                                                                <div class="progress progress-mini">
-                                                                    <div style="width: 48%;" class="progress-bar"></div>
-                                                                </div>
-                                                            </td>
-                                                            <td class="project-people">
-                                                                <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-                                                                <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-                                                                <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-                                                                <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-                                                                <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-                                                            </td>
-                                                            <td class="project-actions">
-                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover issue-tracker">
+                                                <tbody id="tasks">
+                                                    <tr id="task_id">
+                                                        <td>
+                                                            <span class="label label-primary" name="task_name">Khai báo</span>
+                                                        </td>
+                                                        <td>
+                                                            <a href="#" id="process_definition_id">ISSUE-23</a>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                <ul class="tag-list">
+                                                                    <li><a href="" id="order_code"><i class="fa fa-tag"></i> ĐH-001</a></li>
+                                                                    <li><a href="" id="apartment_code"><i class="fa fa-tag"></i> CH-001</a></li>
+                                                                    <li><a href="" id="product_code"><i class="fa fa-tag"></i> SP-001</a></li>
+                                                                    <li><a href="" id="drawer_code"><i class="fa fa-tag"></i> HT-001</a></li>
+                                                                    <li><a href="" id="accessories_code"><i class="fa fa-tag"></i> CT-001</a></li>
+                                                                    <li><a href="" id="error_type"><i class="fa fa-tag"></i> SAI KÍCH THƯỚC</a></li>
+                                                                    <li><a href="" id="error_level"><i class="fa fa-tag"></i> LỖI LOẠI 1</a></li>
+                                                                </ul>
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-sm btn-info"> Xem chi tiết</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="pull-right">
-                                <button class="btn btn-danger" type="submit">Hủy</button>
-                                <button class="ladda-button btn btn-primary"  data-style="expand-left" type="submit">Tạo lỗi</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="footer">
-                    <div>
-                        <strong>Copyright</strong> Grande Company &copy; 2014-2017
                     </div>
-                </div>
-
+                </form>
             </div>
+            <div class="footer">
+                <div>
+                    <strong>Copyright</strong> Grande Company &copy; 2014-2017
+                </div>
+            </div>
+
         </div>
+    </div>
 
-        <!-- Mainly scripts -->
-        <script src="js/jquery-3.1.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-        <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-        <!-- Custom and plugin javascript -->
-        <script src="js/inspinia.js"></script>
-        <script src="js/plugins/pace/pace.min.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
 
-        <!-- Ladda -->
-        <script src="js/plugins/ladda/spin.min.js"></script>
-        <script src="js/plugins/ladda/ladda.min.js"></script>
-        <script src="js/plugins/ladda/ladda.jquery.min.js"></script>
+    <!-- Ladda -->
+    <script src="js/plugins/ladda/spin.min.js"></script>
+    <script src="js/plugins/ladda/ladda.min.js"></script>
+    <script src="js/plugins/ladda/ladda.jquery.min.js"></script>
 
-        <script>
+    <script>
 
-        $(document).ready(function (){
+    $(document).ready(function (){
 
-            $.fn.serializeObject = function () {
-                var o = {};
-                var a = this.serializeArray();
-                $.each(a, function () {
-                    if (o[this.name] !== undefined) {
-                        if (!o[this.name].push) {
-                            o[this.name] = [o[this.name]];
-                        }
-                        o[this.name].push(this.value || '');
-                    } else {
-                        o[this.name] = this.value || '';
-                    }
-                });
-                return o;
-            };
-
-            function doRequest() {
-                var str = $("form").serializeObject();
-                console.log(JSON.stringify(str));
+        function parsePassHtml(item){
+            var task_c="";
+            task_c += "<tr id=\"task_id\">";
+            task_c += "   <td>";
+            task_c += "       <span class=\"label label-primary\" id=\"" + item["task_id"] + "\">" + item["task_name"] + "<\/span>";
+            task_c += "   <\/td>";
+            task_c += "   <td>";
+            task_c += "       <a href=\"#\" id=\"" + item["process_instance_id"] + "\">ISSUE-" + item["process_instance_id"] + "<\/a>";
+            task_c += "   <\/td>";
+            task_c += "   <td>";
+            task_c += "       <small>";
+            task_c += "           <ul class=\"tag-list\">";
+            task_c += "               <li><a href=\"\" id=\"" + item["order_code"] + "\"><i class=\"fa fa-tag\"><\/i> " + "ĐH-" + item["order_code"] + "<\/a><\/li>";
+            task_c += "               <li><a href=\"\" id=\"" + item["apartment_code"] + "\"><i class=\"fa fa-tag\"><\/i> " + "CH-" + item["apartment_code"] + "<\/a><\/li>";
+            task_c += "               <li><a href=\"\" id=\"" + item["product_code"] + "\"><i class=\"fa fa-tag\"><\/i> " + "SP-" + item["product_code"] + "<\/a><\/li>";
+            task_c += "               <li><a href=\"\" id=\"" + item["drawer_code"] + "\"><i class=\"fa fa-tag\"><\/i> " + "HT-" + item["drawer_code"] + "<\/a><\/li>";
+            task_c += "               <li><a href=\"\" id=\"" + item["accessories_code"] + "\"><i class=\"fa fa-tag\"><\/i> " + "CT-" + item["accessories_code"] + "<\/a><\/li>";
+            switch (item["error_type"]) {
+                case "1":
+                task_c += "               <li><a href=\"\" id=\"" + item["error_type"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Sai kích thước" + "<\/a><\/li>";
+                break;
+                case "2":
+                task_c += "               <li><a href=\"\" id=\"" + item["error_type"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Thiết kế sai" + "<\/a><\/li>";
+                break;
+                case "3":
+                task_c += "               <li><a href=\"\" id=\"" + item["error_type"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Khảo sát sai" + "<\/a><\/li>";
+                break;
+                default:
+                task_c += "               <li><a href=\"\" id=\"" + item["error_type"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Không xác định" + "<\/a><\/li>";
+                break;
             }
+            task_c += "               <li><a href=\"\" id=\"" + item["error_level"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Lỗi loại " + item["error_level"] + "<\/a><\/li>";
+            task_c += "           <\/ul>";
+            task_c += "       <\/small>";
+            task_c += "   <\/td>";
+            task_c += "   <td class=\"text-right\">";
+            task_c += "       <a href=\"http://bpmn.com/errordetail?id=" + item["process_instance_id"] + "\" class=\"btn btn-sm btn-info\"> Xem chi tiết<\/a>";
+            task_c += "   <\/td>";
+            task_c += "<\/tr>";
+            $("#tasks").append(task_c);
+            console.log(item);
+        }
 
-            var l = $( '.ladda-button' ).ladda();
-            l.click(function(){
-                // Start loading
-                l.ladda( 'start' );
-                doRequest();
-                // Timeout example
-                // Do something in backend and then stop ladda
-                setTimeout(function(){
-                    l.ladda('stop');
-                },2000)
-            });
+        // var response = [1,2,3,4,5,5,5,5,5,5,6,6,6];
+        // response.forEach(parsePassHtml);
+
+        var url = "http://10.1.120.106:8080/tasks/giamsat";
+        $.ajax({
+            type: "GET",
+            url: url,
+            dataType: 'json',
+            success: function(response)
+            {
+                response.forEach(parsePassHtml);
+            }
+            ,
+            error: function(jqXHR, exception){
+                console.error(jqXHR);
+            }
         });
+    });
 
-        </script>
+    </script>
 
-    </body>
+</body>
 
-    </html>
+</html>
