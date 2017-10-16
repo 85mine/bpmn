@@ -222,7 +222,7 @@
                                     <div class="col-md-12">
                                         <label>Phân loại lỗi</label>
                                         <div class="radio radio-success">
-                                            <input type="radio" name="error_type" id="error_type_1" value="1" checked="">
+                                            <input type="radio" name="error_type" id="error_type_1" value="1">
                                             <label for="error_type_1">Sai kích thước</label>
                                         </div>
                                         <div class="radio radio-success">
@@ -237,13 +237,13 @@
                                     <div class="col-md-12">
                                         <label>Phân cấp lỗi</label>
                                         <div class="radio radio-success">
-                                            <input type="radio" name="error_level" id="error_level_1" value="1" checked="">
+                                            <input type="radio" name="error_level" id="error_level_1" value="1">
                                             <label for="error_level_1">Lỗi loại 1</label>
                                         </div>
                                         <div class="row">
                                             <div class="col-xs-12 col-xs-offset-1 col-md-12 col-md-offset-1">
                                                 <div class="radio radio-info">
-                                                    <input type="radio" name="error_level_1_option" id="error_level_1_option_1" value="0" checked="">
+                                                    <input type="radio" name="error_level_1_option" id="error_level_1_option_1" value="0">
                                                     <label for="error_level_1_option_1">Chủ động xử lý</label>
                                                 </div>
                                                 <div class="radio radio-info">
@@ -252,7 +252,7 @@
                                                     <div class="row">
                                                         <div class="col-xs-12 col-xs-offset-1 col-md-12 col-md-offset-1">
                                                             <div class="radio radio-danger">
-                                                                <input type="radio" name="error_level_1_option2" id="error_level_1_option2_0" value="0" checked="">
+                                                                <input type="radio" name="error_level_1_option2" id="error_level_1_option2_0" value="0">
                                                                 <label for="error_level_1_option2_0">Không yêu cầu mua hàng</label>
                                                             </div>
                                                             <div class="radio radio-info">
@@ -341,6 +341,18 @@
                     break;
                     default:
 
+                }
+
+                if(typeof($("input[name=error_type]")[response["error_type"] - 1]) != "undefined"){
+                    $("input[name=error_type]")[response["error_type"] - 1].checked = true;
+                }
+
+                if(typeof($("input[name=error_level]")[response["error_level"] - 1]) != "undefined"){
+                    $("input[name=error_level]")[response["error_level"] - 1].checked = true;
+                }
+                
+                if(typeof($("input[name=error_level_1_option]")[response["error_level_1_option"] -1]) != "undefined"){
+                    $("input[name=error_level_1_option]")[response["error_level_1_option"] -1].checked = true;
                 }
 
                 switch (response["error_type"]) {
