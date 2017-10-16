@@ -35,7 +35,7 @@
                                 </span>
                             </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                <li><a href="#">Logout</a></li>
+                                <li><a href="/login">Logout</a></li>
                             </ul>
                         </div>
                         <div class="logo-element">
@@ -47,12 +47,6 @@
                     </li>
                     <li>
                         <a href="/tasklist"><i class="fa fa-tasks"></i> <span class="nav-label">Danh sách lỗi</span> </a>
-                    </li>
-                    <li>
-                        <a href="/errordetail"><i class="fa fa-info-circle"></i> <span class="nav-label">Chi tiết lỗi</span> </a>
-                    </li>
-                    <li>
-                        <a href="/taskconfirm"><i class="fa fa-calendar-check-o"></i> <span class="nav-label">Xác nhận lỗi</span> </a>
                     </li>
                 </ul>
 
@@ -67,7 +61,7 @@
                     </div>
                     <ul class="nav navbar-top-links navbar-right">
                         <li>
-                            <a href="#">
+                            <a href="/login">
                                 <i class="fa fa-sign-out"></i> Log out
                             </a>
                         </li>
@@ -187,11 +181,11 @@
                                                         <div class="row">
                                                             <div class="col-xs-12 col-xs-offset-1 col-md-12 col-md-offset-1">
                                                                 <div class="radio radio-info">
-                                                                    <input type="radio" name="error_level_1_option" id="error_level_1_option_1" value="1" checked="">
+                                                                    <input type="radio" name="error_level_1_option" id="error_level_1_option_1" value="0" checked="">
                                                                     <label for="error_level_1_option_1">Chủ động xử lý</label>
                                                                 </div>
                                                                 <div class="radio radio-info">
-                                                                    <input type="radio" name="error_level_1_option" id="error_level_1_option_2" value="2">
+                                                                    <input type="radio" name="error_level_1_option" id="error_level_1_option_2" value="1">
                                                                     <label for="error_level_1_option_2">Yêu cầu cấp vật tư</label>
                                                                 </div>
                                                             </div>
@@ -239,6 +233,7 @@
 
     <!-- Mainly scripts -->
     <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
@@ -287,6 +282,7 @@
                 data: params,
                 success: function(response)
                 {
+                    window.location.href = "http://bpmn.com/tasklist";
                     console.log(response);
                 }
                 ,

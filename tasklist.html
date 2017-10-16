@@ -35,7 +35,7 @@
                                 </span>
                             </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                <li><a href="#">Logout</a></li>
+                                <li><a href="/login">Logout</a></li>
                             </ul>
                         </div>
                         <div class="logo-element">
@@ -47,12 +47,6 @@
                     </li>
                     <li class="active">
                         <a href="/tasklist"><i class="fa fa-tasks"></i> <span class="nav-label">Danh sách lỗi</span> </a>
-                    </li>
-                    <li>
-                        <a href="/errordetail"><i class="fa fa-info-circle"></i> <span class="nav-label">Chi tiết lỗi</span> </a>
-                    </li>
-                    <li>
-                        <a href="/taskconfirm"><i class="fa fa-calendar-check-o"></i> <span class="nav-label">Xác nhận lỗi</span> </a>
                     </li>
                 </ul>
 
@@ -67,7 +61,7 @@
                     </div>
                     <ul class="nav navbar-top-links navbar-right">
                         <li>
-                            <a href="#">
+                            <a href="/login">
                                 <i class="fa fa-sign-out"></i> Log out
                             </a>
                         </li>
@@ -85,21 +79,10 @@
                                         <h5>Danh sách lỗi</h5>
                                     </div>
                                     <div class="ibox-content">
-                                        <div class="m-b-lg">
-                                            <div class="input-group">
-                                                <input type="text" placeholder="Search issue by name..." class=" form-control">
-                                                <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-white">Tìm kiếm</button>
-                                                </span>
-                                            </div>
-                                            <div class="m-t-md">
-                                                <strong>Found 61 issues.</strong>
-                                            </div>
-                                        </div>
                                         <div class="table-responsive">
                                             <table class="table table-hover issue-tracker">
                                                 <tbody id="tasks">
-                                                    <tr id="task_id">
+                                                    <!-- <tr id="task_id">
                                                         <td>
                                                             <span class="label label-primary" name="task_name">Khai báo</span>
                                                         </td>
@@ -122,7 +105,7 @@
                                                         <td>
                                                             <a href="#" class="btn btn-sm btn-info"> Xem chi tiết</a>
                                                         </td>
-                                                    </tr>
+                                                    </tr> -->
                                                 </tbody>
                                             </table>
                                         </div>
@@ -144,6 +127,7 @@
 
     <!-- Mainly scripts -->
     <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
@@ -163,7 +147,7 @@
 
         function parsePassHtml(item){
             var task_c="";
-            task_c += "<tr id=\"task_id\">";
+            task_c += "<tr id=\"" + "task_" + item["task_id"] + "\">";
             task_c += "   <td>";
             task_c += "       <span class=\"label label-primary\" id=\"" + item["task_id"] + "\">" + item["task_name"] + "<\/span>";
             task_c += "   <\/td>";
@@ -207,7 +191,7 @@
         // var response = [1,2,3,4,5,5,5,5,5,5,6,6,6];
         // response.forEach(parsePassHtml);
 
-        var url = "http://10.1.120.106:8080/tasks/giamsat";
+        var url = "http://10.1.120.106:8080/tasks/" + $.cookie('username');
         $.ajax({
             type: "GET",
             url: url,
