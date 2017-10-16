@@ -66,13 +66,18 @@
             return o;
         };
 
-        $("#login_btn").on("click",function(e){
-            e.preventDefault();
+        $("form").on("submit",function(e){
             var serialize = $("form").serializeObject();
             $.cookie('username', serialize["username"]);
             window.location.href = "http://bpmn.com/";
         });
 
+        // $("#login_btn").on("click",function(e){
+        //     e.preventDefault();
+        //     var serialize = $("form").serializeObject();
+        //     $.cookie('username', serialize["username"]);
+        //     window.location.href = "http://bpmn.com/";
+        // });
     });
     </script>
 
