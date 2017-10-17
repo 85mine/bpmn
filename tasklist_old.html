@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grande | Demo</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="css/plugins/ladda/ladda-themeless.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                                    <span class="block m-t-xs">
+                                        <strong class="font-bold">David Williams</strong>
+                                    </span>
+                                    <span class="text-muted text-xs block">Art Director<b class="caret"></b></span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="/login">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            IN+
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/"><i class="fa fa-exclamation-circle"></i> <span class="nav-label">Khai báo lỗi</span></a>
+                    </li>
+                    <li class="active">
+                        <a href="/tasklist"><i class="fa fa-tasks"></i> <span class="nav-label">Danh sách lỗi</span> </a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <a href="/login">
+                                <i class="fa fa-sign-out"></i> Log out
+                            </a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <form method="post">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="wrapper wrapper-content animated fadeInUp">
+                                <div class="ibox">
+                                    <div class="ibox-title">
+                                        <h5>Danh sách lỗi</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover issue-tracker">
+                                                <tbody id="tasks">
+                                                    <!-- <tr id="task_id">
+                                                        <td>
+                                                            <span class="label label-primary" name="task_name">Khai báo</span>
+                                                        </td>
+                                                        <td>
+                                                            <a href="#" id="process_definition_id">ISSUE-23</a>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                <ul class="tag-list">
+                                                                    <li><a href="" id="order_code"><i class="fa fa-tag"></i> ĐH-001</a></li>
+                                                                    <li><a href="" id="apartment_code"><i class="fa fa-tag"></i> CH-001</a></li>
+                                                                    <li><a href="" id="product_code"><i class="fa fa-tag"></i> SP-001</a></li>
+                                                                    <li><a href="" id="drawer_code"><i class="fa fa-tag"></i> HT-001</a></li>
+                                                                    <li><a href="" id="accessories_code"><i class="fa fa-tag"></i> CT-001</a></li>
+                                                                    <li><a href="" id="error_type"><i class="fa fa-tag"></i> SAI KÍCH THƯỚC</a></li>
+                                                                    <li><a href="" id="error_level"><i class="fa fa-tag"></i> LỖI LOẠI 1</a></li>
+                                                                </ul>
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-sm btn-info"> Xem chi tiết</a>
+                                                        </td>
+                                                    </tr> -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="footer">
+                <div>
+                    <strong>Copyright</strong> Grande Company &copy; 2014-2017
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- Ladda -->
+    <script src="js/plugins/ladda/spin.min.js"></script>
+    <script src="js/plugins/ladda/ladda.min.js"></script>
+    <script src="js/plugins/ladda/ladda.jquery.min.js"></script>
+
+    <script>
+
+    $(document).ready(function (){
+
+        function parsePassHtml(item){
+            var task_c="";
+            task_c += "<tr id=\"" + "task_" + item["task_id"] + "\">";
+            task_c += "   <td>";
+            task_c += "       <span class=\"label label-primary\" id=\"" + item["task_id"] + "\">" + item["task_name"] + "<\/span>";
+            task_c += "   <\/td>";
+            task_c += "   <td>";
+            task_c += "       <a href=\"#\" id=\"" + item["process_instance_id"] + "\">ISSUE-" + item["process_instance_id"] + "<\/a>";
+            task_c += "   <\/td>";
+            task_c += "   <td>";
+            task_c += "       <small>";
+            task_c += "           <ul class=\"tag-list\">";
+            task_c += "               <li><a href=\"\" id=\"" + item["order_code"] + "\"><i class=\"fa fa-tag\"><\/i> " + "ĐH-" + item["order_code"] + "<\/a><\/li>";
+            task_c += "               <li><a href=\"\" id=\"" + item["apartment_code"] + "\"><i class=\"fa fa-tag\"><\/i> " + "CH-" + item["apartment_code"] + "<\/a><\/li>";
+            task_c += "               <li><a href=\"\" id=\"" + item["product_code"] + "\"><i class=\"fa fa-tag\"><\/i> " + "SP-" + item["product_code"] + "<\/a><\/li>";
+            task_c += "               <li><a href=\"\" id=\"" + item["drawer_code"] + "\"><i class=\"fa fa-tag\"><\/i> " + "HT-" + item["drawer_code"] + "<\/a><\/li>";
+            task_c += "               <li><a href=\"\" id=\"" + item["accessories_code"] + "\"><i class=\"fa fa-tag\"><\/i> " + "CT-" + item["accessories_code"] + "<\/a><\/li>";
+            switch (item["error_type"]) {
+                case "1":
+                task_c += "               <li><a href=\"\" id=\"" + item["error_type"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Sai kích thước" + "<\/a><\/li>";
+                break;
+                case "2":
+                task_c += "               <li><a href=\"\" id=\"" + item["error_type"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Thiết kế sai" + "<\/a><\/li>";
+                break;
+                case "3":
+                task_c += "               <li><a href=\"\" id=\"" + item["error_type"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Khảo sát sai" + "<\/a><\/li>";
+                break;
+                default:
+                task_c += "               <li><a href=\"\" id=\"" + item["error_type"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Không xác định" + "<\/a><\/li>";
+                break;
+            }
+            task_c += "               <li><a href=\"\" id=\"" + item["error_level"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Lỗi loại " + item["error_level"] + "<\/a><\/li>";
+            task_c += "           <\/ul>";
+            task_c += "       <\/small>";
+            task_c += "   <\/td>";
+            task_c += "   <td class=\"text-right\">";
+            task_c += "       <a href=\"http://bpmn.com/errordetail?id=" + item["process_instance_id"] + "\" class=\"btn btn-sm btn-info\"> Xem chi tiết<\/a>";
+            task_c += "   <\/td>";
+            task_c += "<\/tr>";
+            $("#tasks").append(task_c);
+            console.log(item);
+        }
+
+        // var response = [1,2,3,4,5,5,5,5,5,5,6,6,6];
+        // response.forEach(parsePassHtml);
+
+        var url = "http://10.1.120.106:8080/tasks/" + $.cookie('username');
+        $.ajax({
+            type: "GET",
+            url: url,
+            dataType: 'json',
+            success: function(response)
+            {
+                response.forEach(parsePassHtml);
+            }
+            ,
+            error: function(jqXHR, exception){
+                console.error(jqXHR);
+            }
+        });
+    });
+
+    </script>
+
+</body>
+
+</html>
