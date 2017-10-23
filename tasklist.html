@@ -92,11 +92,11 @@
                                             <td>
                                             <small>
                                             <ul class="tag-list">
-                                            <li><a href="" id="order_code"><i class="fa fa-tag"></i> ĐH-001</a></li>
-                                            <li><a href="" id="apartment_code"><i class="fa fa-tag"></i> CH-001</a></li>
-                                            <li><a href="" id="product_code"><i class="fa fa-tag"></i> SP-001</a></li>
-                                            <li><a href="" id="drawer_code"><i class="fa fa-tag"></i> HT-001</a></li>
-                                            <li><a href="" id="accessories_code"><i class="fa fa-tag"></i> CT-001</a></li>
+                                            <li><a href="" id="order_id"><i class="fa fa-tag"></i> ĐH-001</a></li>
+                                            <li><a href="" id="apartment_id"><i class="fa fa-tag"></i> CH-001</a></li>
+                                            <li><a href="" id="product_id"><i class="fa fa-tag"></i> SP-001</a></li>
+                                            <li><a href="" id="drawer_id"><i class="fa fa-tag"></i> HT-001</a></li>
+                                            <li><a href="" id="accessories_id"><i class="fa fa-tag"></i> CT-001</a></li>
                                             <li><a href="" id="error_type"><i class="fa fa-tag"></i> SAI KÍCH THƯỚC</a></li>
                                             <li><a href="" id="error_level"><i class="fa fa-tag"></i> LỖI LOẠI 1</a></li>
                                         </ul>
@@ -143,87 +143,64 @@
 
 <script>
 
-$(document).ready(function (){
+    $(document).ready(function (){
 
-    function parsePassHtml(item){
-        var task_c="";
-        task_c += "<tr id=\"" + "task_" + item["task_id"] + "\">";
-        if (item["assignee"] == $.cookie('username')) {
+        function parsePassHtml(item){
+            var task_c="";
+            task_c += "<tr id=\"" + "task_" + item["task_id"] + "\">";
+            if (item["assignee"] == $.cookie('username')) {
+                task_c += "   <td>";
+                task_c += "       <span class=\"label label-danger\">" + item["task_description"] + "<\/span>";
+                task_c += "   <\/td>";
+            } else {
+                task_c += "   <td>";
+                task_c += "       <span class=\"label label\">" + item["task_description"] + "<\/span>";
+                task_c += "   <\/td>";
+            }
             task_c += "   <td>";
-            task_c += "       <span class=\"label label-danger\">" + "To Me" + "<\/span>";
+            task_c += "       <span class=\"label label-primary\" id=\"" + item["task_id"] + "\">" + item["task_previous_name"] + "<\/span>";
             task_c += "   <\/td>";
-        } else {
-            switch (item["assignee"]) {
-                case "bu":
-                task_c += "   <td>";
-                task_c += "       <span class=\"label label-primary\">" + "Điều phối" + "<\/span>";
-                task_c += "   <\/td>";
+            task_c += "   <td>";
+            task_c += "       <a href=\"#\" id=\"" + item["process_instance_id"] + "\">ISSUE-" + item["process_instance_id"] + "<\/a>";
+            task_c += "   <\/td>";
+            task_c += "   <td>";
+            task_c += "       <small>";
+            task_c += "           <ul class=\"tag-list\">";
+            task_c += "               <li><a href=\"\" id=\"" + item["order_id"] + "\"><i class=\"fa fa-tag\"><\/i> " + "ĐH-" + item["order_id"] + "<\/a><\/li>";
+            task_c += "               <li><a href=\"\" id=\"" + item["apartment_id"] + "\"><i class=\"fa fa-tag\"><\/i> " + "CH-" + item["apartment_id"] + "<\/a><\/li>";
+            task_c += "               <li><a href=\"\" id=\"" + item["product_id"] + "\"><i class=\"fa fa-tag\"><\/i> " + "SP-" + item["product_id"] + "<\/a><\/li>";
+            task_c += "               <li><a href=\"\" id=\"" + item["drawer_id"] + "\"><i class=\"fa fa-tag\"><\/i> " + "HT-" + item["drawer_id"] + "<\/a><\/li>";
+            task_c += "               <li><a href=\"\" id=\"" + item["accessories_id"] + "\"><i class=\"fa fa-tag\"><\/i> " + "CT-" + item["accessories_id"] + "<\/a><\/li>";
+            switch (item["error_type"]) {
+                case "1":
+                task_c += "               <li><a href=\"\" id=\"" + item["error_type"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Sai kích thước" + "<\/a><\/li>";
                 break;
-                case "vanchuyen":
-                task_c += "   <td>";
-                task_c += "       <span class=\"label label-primary\">" + "Vận chuyển" + "<\/span>";
-                task_c += "   <\/td>";
+                case "2":
+                task_c += "               <li><a href=\"\" id=\"" + item["error_type"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Thiết kế sai" + "<\/a><\/li>";
                 break;
-                case "mrp":
-                task_c += "   <td>";
-                task_c += "       <span class=\"label label-primary\">" + "Kế hoạch vật tư" + "<\/span>";
-                task_c += "   <\/td>";
-                break;
-                case "giamsat":
-                task_c += "   <td>";
-                task_c += "       <span class=\"label label-primary\">" + "Giám sát công trình" + "<\/span>";
-                task_c += "   <\/td>";
+                case "3":
+                task_c += "               <li><a href=\"\" id=\"" + item["error_type"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Khảo sát sai" + "<\/a><\/li>";
                 break;
                 default:
+                task_c += "               <li><a href=\"\" id=\"" + item["error_type"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Không xác định" + "<\/a><\/li>";
                 break;
-
             }
+            task_c += "               <li><a href=\"\" id=\"" + item["error_level"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Lỗi loại " + item["error_level"] + "<\/a><\/li>";
+            task_c += "           <\/ul>";
+            task_c += "       <\/small>";
+            task_c += "   <\/td>";
+            task_c += "   <td class=\"text-right\">";
+            task_c += "       <a href=\"http://bpmn.com/errordetail?id=" + item["process_instance_id"] + "\" class=\"btn btn-sm btn-info\"> Xem chi tiết<\/a>";
+            task_c += "   <\/td>";
+            task_c += "<\/tr>";
+            $("#tasks").append(task_c);
+            console.log(item);
         }
-
-        task_c += "   <td>";
-        task_c += "       <span class=\"label label-primary\" id=\"" + item["task_id"] + "\">" + item["task_name"] + "<\/span>";
-        task_c += "   <\/td>";
-        task_c += "   <td>";
-        task_c += "       <a href=\"#\" id=\"" + item["process_instance_id"] + "\">ISSUE-" + item["process_instance_id"] + "<\/a>";
-        task_c += "   <\/td>";
-        task_c += "   <td>";
-        task_c += "       <small>";
-        task_c += "           <ul class=\"tag-list\">";
-        task_c += "               <li><a href=\"\" id=\"" + item["order_code"] + "\"><i class=\"fa fa-tag\"><\/i> " + "ĐH-" + item["order_code"] + "<\/a><\/li>";
-        task_c += "               <li><a href=\"\" id=\"" + item["apartment_code"] + "\"><i class=\"fa fa-tag\"><\/i> " + "CH-" + item["apartment_code"] + "<\/a><\/li>";
-        task_c += "               <li><a href=\"\" id=\"" + item["product_code"] + "\"><i class=\"fa fa-tag\"><\/i> " + "SP-" + item["product_code"] + "<\/a><\/li>";
-        task_c += "               <li><a href=\"\" id=\"" + item["drawer_code"] + "\"><i class=\"fa fa-tag\"><\/i> " + "HT-" + item["drawer_code"] + "<\/a><\/li>";
-        task_c += "               <li><a href=\"\" id=\"" + item["accessories_code"] + "\"><i class=\"fa fa-tag\"><\/i> " + "CT-" + item["accessories_code"] + "<\/a><\/li>";
-        switch (item["error_type"]) {
-            case "1":
-            task_c += "               <li><a href=\"\" id=\"" + item["error_type"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Sai kích thước" + "<\/a><\/li>";
-            break;
-            case "2":
-            task_c += "               <li><a href=\"\" id=\"" + item["error_type"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Thiết kế sai" + "<\/a><\/li>";
-            break;
-            case "3":
-            task_c += "               <li><a href=\"\" id=\"" + item["error_type"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Khảo sát sai" + "<\/a><\/li>";
-            break;
-            default:
-            task_c += "               <li><a href=\"\" id=\"" + item["error_type"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Không xác định" + "<\/a><\/li>";
-            break;
-        }
-        task_c += "               <li><a href=\"\" id=\"" + item["error_level"] + "\"><i class=\"fa fa-tag\"><\/i> " + "Lỗi loại " + item["error_level"] + "<\/a><\/li>";
-        task_c += "           <\/ul>";
-        task_c += "       <\/small>";
-        task_c += "   <\/td>";
-        task_c += "   <td class=\"text-right\">";
-        task_c += "       <a href=\"http://bpmn.com/errordetail?id=" + item["process_instance_id"] + "\" class=\"btn btn-sm btn-info\"> Xem chi tiết<\/a>";
-        task_c += "   <\/td>";
-        task_c += "<\/tr>";
-        $("#tasks").append(task_c);
-        console.log(item);
-    }
 
     // var response = [1,2,3,4,5,5,5,5,5,5,6,6,6];
     // response.forEach(parsePassHtml);
 
-    var url = "http://10.1.120.106:8080/process_list/";
+    var url = "http://localhost:8080//api/v1/task/list/all";
     $.ajax({
         type: "GET",
         url: url,

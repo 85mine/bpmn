@@ -92,23 +92,23 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label class="control-label">Đơn hàng *</label>
-                                                        <input type="text" class="form-control" id="order_code" name="order_code">
+                                                        <input type="text" class="form-control" id="order_id" name="order_id">
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label class="control-label">Căn hộ *</label>
-                                                        <input type="text" class="form-control" id="apartment_code" name="apartment_code">
+                                                        <input type="text" class="form-control" id="apartment_id" name="apartment_id">
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label class="control-label">Sản phẩm *</label>
-                                                        <input type="text" class="form-control" id="product_code" name="product_code">
+                                                        <input type="text" class="form-control" id="product_id" name="product_id">
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label class="control-label">Hộc tủ</label>
-                                                        <input type="text" class="form-control" id="drawer_code" name="drawer_code">
+                                                        <input type="text" class="form-control" id="drawer_id" name="drawer_id">
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label class="control-label">Chi tiết</label>
-                                                        <input type="text" class="form-control" id="accessories_code" name="accessories_code">
+                                                        <input type="text" class="form-control" id="accessories_id" name="accessories_id">
                                                     </div>
                                                 </div>
                                             </div>
@@ -133,22 +133,22 @@
                                                 <div class="row">
                                                     <div class="col-md-3 col-md-offset-3">
                                                         <div class="radio radio-success">
-                                                            <input type="radio" name="error_type" id="error_type_1" value="1" checked="">
-                                                            <label for="error_type_1">Sai kích thước</label>
+                                                            <input type="radio" name="issue_type" id="issue_type_1" value="1" checked="">
+                                                            <label for="issue_type_1">Sai kích thước</label>
                                                         </div>
                                                         <div class="radio radio-success">
-                                                            <input type="radio" name="error_type" id="error_type_2" value="2">
-                                                            <label for="error_type_2">Thiết kế sai</label>
+                                                            <input type="radio" name="issue_type" id="issue_type_2" value="2">
+                                                            <label for="issue_type_2">Thiết kế sai</label>
                                                         </div>
                                                         <div class="radio radio-success">
-                                                            <input type="radio" name="error_type" id="error_type_3" value="3">
-                                                            <label for="error_type_3">Khảo sát sai</label>
+                                                            <input type="radio" name="issue_type" id="issue_type_3" value="3">
+                                                            <label for="issue_type_3">Khảo sát sai</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="chat-message-form">
                                                             <div class="form-group">
-                                                                <textarea class="form-control message-input" name="error_type_message" placeholder="Nhập mô tả chi tiết"></textarea>
+                                                                <textarea class="form-control message-input" name="issue_type_description" placeholder="Nhập mô tả chi tiết"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -175,34 +175,34 @@
                                                 <div class="row">
                                                     <div class="col-md-3 col-md-offset-3">
                                                         <div class="radio radio-success">
-                                                            <input type="radio" name="error_level" id="error_level_1" value="1" checked="">
-                                                            <label for="error_level_1">Lỗi loại 1</label>
+                                                            <input type="radio" name="issue_level" id="issue_level_1" value="1" checked="">
+                                                            <label for="issue_level_1">Lỗi loại 1</label>
                                                         </div>
-                                                        <div class="row">
+<!--                                                         <div class="row">
                                                             <div class="col-xs-12 col-xs-offset-1 col-md-12 col-md-offset-1">
                                                                 <div class="radio radio-info">
-                                                                    <input type="radio" name="error_level_1_option" id="error_level_1_option_1" value="0" checked="">
-                                                                    <label for="error_level_1_option_1">Chủ động xử lý</label>
+                                                                    <input type="radio" name="issue_level_1_option" id="issue_level_1_option_1" value="0" checked="">
+                                                                    <label for="issue_level_1_option_1">Chủ động xử lý</label>
                                                                 </div>
                                                                 <div class="radio radio-info">
-                                                                    <input type="radio" name="error_level_1_option" id="error_level_1_option_2" value="1">
-                                                                    <label for="error_level_1_option_2">Yêu cầu cấp vật tư</label>
+                                                                    <input type="radio" name="issue_level_1_option" id="issue_level_1_option_2" value="1">
+                                                                    <label for="issue_level_1_option_2">Yêu cầu cấp vật tư</label>
                                                                 </div>
                                                             </div>
+                                                        </div> -->
+                                                        <div class="radio radio-success">
+                                                            <input type="radio" name="issue_level" id="issue_level_2" value="2">
+                                                            <label for="issue_level_2">Lỗi loại 2</label>
                                                         </div>
                                                         <div class="radio radio-success">
-                                                            <input type="radio" name="error_level" id="error_level_2" value="2">
-                                                            <label for="error_level_2">Lỗi loại 2</label>
-                                                        </div>
-                                                        <div class="radio radio-success">
-                                                            <input type="radio" name="error_level" id="error_level_3" value="3">
-                                                            <label for="error_level_3">Lỗi loại 3</label>
+                                                            <input type="radio" name="issue_level" id="issue_level_3" value="3">
+                                                            <label for="issue_level_3">Lỗi loại 3</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="chat-message-form">
                                                             <div class="form-group">
-                                                                <textarea class="form-control message-input" name="error_level_message" placeholder="Nhập mô tả chi tiết"></textarea>
+                                                                <textarea class="form-control message-input" name="issue_level_description" placeholder="Nhập mô tả chi tiết"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -272,7 +272,7 @@
             l.ladda( 'start' );
             var serialize = $("form").serializeObject();
             var params = JSON.stringify(serialize);
-            var url = "http://10.1.120.106:8080/process";
+            var url = "http://localhost:8080//api/v1/issue/create";
             var result = "";
             return $.ajax({
                 type: "POST",
