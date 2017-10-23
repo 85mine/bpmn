@@ -80,7 +80,7 @@
                                             <div class="col-lg-12">
                                                 <div class="m-b-md">
                                                     <a href="#" class="btn btn-primary btn-xs pull-right" data-toggle="modal" data-target="#modal" id="task_name"></a>
-                                                    <h2>Thông chi tiết lỗi</h2>
+                                                    <h3>Thông chi tiết lỗi <span class="label label-danger" id="task_description"></span></h3>
                                                 </div>
                                                 <!-- <dl class="dl-horizontal">
                                                     <dt>Trạng thái:</dt> <dd><span class="label label-primary"></span></dd>
@@ -90,29 +90,29 @@
                                         <div class="row">
                                             <div class="col-lg-5">
                                                 <dl class="dl-horizontal">
-                                                    <dt>Đơn hàng:</dt><dd id="order_code"></dd>
-                                                    <dt>Căn hộ:</dt><dd id="apartment_code"></dd>
+                                                    <dt>Đơn hàng:</dt><dd id="order_id"></dd>
+                                                    <dt>Căn hộ:</dt><dd id="apartment_id"></dd>
                                                 </dl>
                                             </div>
                                             <div class="col-lg-7">
                                                 <dl class="dl-horizontal" >
-                                                    <dt>Sản phẩm:</dt><dd id="product_code"></dd>
-                                                    <dt>Hộc tủ:</dt><dd id="drawer_code"></dd>
-                                                    <dt>Chi tiết:</dt><dd id="accessories_code"></dd>
+                                                    <dt>Sản phẩm:</dt><dd id="product_id"></dd>
+                                                    <dt>Hộc tủ:</dt><dd id="drawer_id"></dd>
+                                                    <dt>Chi tiết:</dt><dd id="accessories_id"></dd>
                                                 </dl>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-5">
                                                 <dl class="dl-horizontal">
-                                                    <dt>Thông tin lỗi:</dt><dd id="error_type"></dd>
-                                                    <dt></dt><dd><textarea id="error_type_message" disabled></textarea></dd>
+                                                    <dt>Thông tin lỗi:</dt><dd id="issue_type"></dd>
+                                                    <dt></dt><dd><textarea id="issue_type_description" disabled></textarea></dd>
                                                 </dl>
                                             </div>
                                             <div class="col-lg-5">
                                                 <dl class="dl-horizontal">
-                                                    <dt>Cấp độ lỗi:</dt><dd id="error_level"></dd>
-                                                    <dt></dt><dd><textarea id="error_level_message" disabled></textarea></dd>
+                                                    <dt>Cấp độ lỗi:</dt><dd id="issue_level"></dd>
+                                                    <dt></dt><dd><textarea id="issue_level_description" disabled></textarea></dd>
                                                 </dl>
                                             </div>
                                         </div>
@@ -144,55 +144,55 @@
                                     <div class="col-md-12">
                                         <label>Phân loại lỗi</label>
                                         <div class="radio radio-success">
-                                            <input type="radio" name="error_type" id="error_type_1" value="1">
-                                            <label for="error_type_1">Sai kích thước</label>
+                                            <input type="radio" name="issue_type" id="issue_type_1" value="1">
+                                            <label for="issue_type_1">Sai kích thước</label>
                                         </div>
                                         <div class="radio radio-success">
-                                            <input type="radio" name="error_type" id="error_type_2" value="2">
-                                            <label for="error_type_2">Thiết kế sai</label>
+                                            <input type="radio" name="issue_type" id="issue_type_2" value="2">
+                                            <label for="issue_type_2">Thiết kế sai</label>
                                         </div>
                                         <div class="radio radio-success">
-                                            <input type="radio" name="error_type" id="error_type_3" value="3">
-                                            <label for="error_type_3">Khảo sát sai</label>
+                                            <input type="radio" name="issue_type" id="issue_type_3" value="3">
+                                            <label for="issue_type_3">Khảo sát sai</label>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <label>Phân cấp lỗi</label>
                                         <div class="radio radio-success">
-                                            <input type="radio" name="error_level" id="error_level_1" value="1">
-                                            <label for="error_level_1">Lỗi loại 1</label>
+                                            <input type="radio" name="issue_level" id="issue_level_1" value="1">
+                                            <label for="issue_level_1">Lỗi loại 1</label>
                                         </div>
-                                        <div class="row">
+<!--                                         <div class="row">
                                             <div class="col-xs-12 col-xs-offset-1 col-md-12 col-md-offset-1">
                                                 <div class="radio radio-info">
-                                                    <input type="radio" name="error_level_1_option" id="error_level_1_option_1" value="0">
-                                                    <label for="error_level_1_option_1">Chủ động xử lý</label>
+                                                    <input type="radio" name="issue_level_1_option" id="issue_level_1_option_1" value="0">
+                                                    <label for="issue_level_1_option_1">Chủ động xử lý</label>
                                                 </div>
                                                 <div class="radio radio-info">
-                                                    <input type="radio" name="error_level_1_option" id="error_level_1_option_2" value="1">
-                                                    <label for="error_level_1_option_2">Yêu cầu cấp vật tư</label>
+                                                    <input type="radio" name="issue_level_1_option" id="issue_level_1_option_2" value="1">
+                                                    <label for="issue_level_1_option_2">Yêu cầu cấp vật tư</label>
                                                     <div class="row">
                                                         <div class="col-xs-12 col-xs-offset-1 col-md-12 col-md-offset-1">
                                                             <div class="radio radio-danger">
-                                                                <input type="radio" name="error_level_1_option2" id="error_level_1_option2_0" value="0">
-                                                                <label for="error_level_1_option2_0">Không yêu cầu mua hàng</label>
+                                                                <input type="radio" name="issue_level_1_option2" id="issue_level_1_option2_0" value="0">
+                                                                <label for="issue_level_1_option2_0">Không yêu cầu mua hàng</label>
                                                             </div>
                                                             <div class="radio radio-info">
-                                                                <input type="radio" name="error_level_1_option2" id="error_level_1_option2_1" value="1">
-                                                                <label for="error_level_1_option2_1">Yêu cầu mua hàng</label>
+                                                                <input type="radio" name="issue_level_1_option2" id="issue_level_1_option2_1" value="1">
+                                                                <label for="issue_level_1_option2_1">Yêu cầu mua hàng</label>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div> -->
+                                        <div class="radio radio-success">
+                                            <input type="radio" name="issue_level" id="issue_level_2" value="2">
+                                            <label for="issue_level_2">Lỗi loại 2</label>
                                         </div>
                                         <div class="radio radio-success">
-                                            <input type="radio" name="error_level" id="error_level_2" value="2">
-                                            <label for="error_level_2">Lỗi loại 2</label>
-                                        </div>
-                                        <div class="radio radio-success">
-                                            <input type="radio" name="error_level" id="error_level_3" value="3">
-                                            <label for="error_level_3">Lỗi loại 3</label>
+                                            <input type="radio" name="issue_level" id="issue_level_3" value="3">
+                                            <label for="issue_level_3">Lỗi loại 3</label>
                                         </div>
                                     </div>
                                 </div>
@@ -227,86 +227,80 @@
 
     <script>
 
-    $(document).ready(function (){
-        function getUrlParams(elem) {
-            var sPageURL = window.location.search.substring(1);
-            var sURLVariables = sPageURL.split('&');
-            for (var i = 0; i < sURLVariables.length; i++)
-            {
-                var sParameterName = sURLVariables[i].split('=');
-                if (sParameterName[0] == elem)
+        $(document).ready(function (){
+            function getUrlParams(elem) {
+                var sPageURL = window.location.search.substring(1);
+                var sURLVariables = sPageURL.split('&');
+                for (var i = 0; i < sURLVariables.length; i++)
                 {
-                    return decodeURIComponent(sParameterName[1]);
+                    var sParameterName = sURLVariables[i].split('=');
+                    if (sParameterName[0] == elem)
+                    {
+                        return decodeURIComponent(sParameterName[1]);
+                    }
                 }
             }
-        }
 
-        var error_id = getUrlParams("id");
-        var url = "http://10.1.120.106:8080/error/" + error_id;
-        $.ajax({
-            type: "GET",
-            url: url,
-            dataType: 'json',
-            success: function(response)
-            {
-                $("#task_id").val(response['task_id']);
-                $("#task_name").html("<i class=\"fa fa-pencil\"></i> " + response['task_name']);
-                $("#order_code").html("ĐH-" + response['order_code']);
-                $("#apartment_code").html("CH-" + response['apartment_code']);
-                $("#product_code").html("SP-" + response['product_code']);
-                $("#drawer_code").html("HT-" + response['drawer_code']);
-                $("#accessories_code").html("CT-" + response['accessories_code']);
+            var task_id = getUrlParams("id");
+            var url = "http://localhost:8080/api/v1/task/" + task_id;
+            $.ajax({
+                type: "GET",
+                url: url,
+                dataType: 'json',
+                success: function(response)
+                {
 
-                switch (response['assignee']) {
-                    case "giamsat":
-                    $(".assignee").html("Giám sát viên");
-                    break;
-                    default:
+                    $("#task_description").html(response['task_description']);
+                    $("#task_id").val(response['task_id']);
+                    $("#task_name").html("<i class=\"fa fa-pencil\"></i> " + response['task_name']);
+                    $("#order_id").html("ĐH-" + response['order_id']);
+                    $("#apartment_id").html("CH-" + response['apartment_id']);
+                    $("#product_id").html("SP-" + response['product_id']);
+                    $("#drawer_id").html("HT-" + response['drawer_id']);
+                    $("#accessories_id").html("CT-" + response['accessories_id']);
 
-                }
+                    if(typeof($("input[name=issue_type]")[response["issue_type"] - 1]) != "undefined"){
+                        $("input[name=issue_type]")[response["issue_type"] - 1].checked = true;
+                    }
 
-                if(typeof($("input[name=error_type]")[response["error_type"] - 1]) != "undefined"){
-                    $("input[name=error_type]")[response["error_type"] - 1].checked = true;
-                }
+                    if(typeof($("input[name=issue_level]")[response["issue_level"] - 1]) != "undefined"){
+                        $("input[name=issue_level]")[response["issue_level"] - 1].checked = true;
+                    }
 
-                if(typeof($("input[name=error_level]")[response["error_level"] - 1]) != "undefined"){
-                    $("input[name=error_level]")[response["error_level"] - 1].checked = true;
-                }
+                    if(typeof($("input[name=issue_level_1_option]")[response["issue_level_1_option"] -1]) != "undefined"){
+                        $("input[name=issue_level_1_option]")[response["issue_level_1_option"] -1].checked = true;
+                    }
 
-                if(typeof($("input[name=error_level_1_option]")[response["error_level_1_option"] -1]) != "undefined"){
-                    $("input[name=error_level_1_option]")[response["error_level_1_option"] -1].checked = true;
-                }
+                    switch (response["issue_type"]) {
+                        case "1":
+                        $("#issue_type").html("Sai kích thước");
+                        break;
+                        case "2":
+                        $("#issue_type").html("Thiết kế sai");
+                        break;
+                        case "3":
+                        $("#issue_type").html("Khảo sát sai");
+                        break;
+                        default:
+                        $("#issue_type").html("Không xác định");
+                        break;
+                    }
 
-                switch (response["error_type"]) {
-                    case "1":
-                    $("#error_type").html("Sai kích thước");
-                    break;
-                    case "2":
-                    $("#error_type").html("Thiết kế sai");
-                    break;
-                    case "3":
-                    $("#error_type").html("Khảo sát sai");
-                    break;
-                    default:
-                    $("#error_type").html("Không xác định");
-                    break;
-                }
+                    $("#issue_level").html("Lỗi loại " + response["issue_level"]);
 
-                $("#error_level").html("Lỗi loại " + response["error_level"]);
+                    switch (response["issue_level_1_option"]) {
+                        case "1":
+                        $("#issue_level_1_option").html("Chủ động xử lý");
+                        break;
+                        case "2":
+                        $("#issue_level_1_option").html("Yêu cầu cấp vật tư");
+                        break;
+                    }
 
-                switch (response["error_level_1_option"]) {
-                    case "1":
-                    $("#error_level_1_option").html("Chủ động xử lý");
-                    break;
-                    case "2":
-                    $("#error_level_1_option").html("Yêu cầu cấp vật tư");
-                    break;
-                }
+                    $("#issue_type_description").html(response["issue_type_description"]);
+                    $("#issue_level_description").html(response["issue_level_description"]);
 
-                $("#error_type_message").html(response["error_type_message"]);
-                $("#error_level_message").html(response["error_level_message"]);
-
-                console.log(response);
+                    console.log(response);
                 // response.forEach(parsePassHtml);
             }
             ,
@@ -338,7 +332,7 @@
             var serialize = $("form").serializeObject();
             var params = JSON.stringify(serialize);
             console.log(params);
-            var url_post = "http://10.1.120.106:8080/task";
+            var url_post = "http://localhost:8080/api/v1/task/complete/" + task_id;
             return $.ajax({
                 type: "POST",
                 url: url_post,
@@ -361,7 +355,7 @@
 
     });
 
-    </script>
+</script>
 
 </body>
 
